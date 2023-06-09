@@ -29,3 +29,9 @@ stages:
     params:
     - base
     - evaluate
+artifacts:
+  cv:
+    path: model
+    type: model
+    labels:
+    - cv
