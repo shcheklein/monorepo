@@ -11,7 +11,7 @@ This is an auto-generated repository for use in [DVC](https://dvc.org)
 This is a Computer Vision (CV) project that solves the problem of segmenting out 
 swimming pools from satellite images. 
 
-![Example results](./results/evaluate/plots/images/)
+[Example results](./results/evaluate/plots/images/)
 
 We use a slightly modified version of the [BH-Pools dataset](http://patreo.dcc.ufmg.br/2020/07/29/bh-pools-watertanks-datasets/):
 we split the original 4k images into tiles of 1024x1024 pixels.
@@ -107,6 +107,12 @@ This tag also contains a GitHub Actions workflow that reruns the pipeline if any
  changes are introduced to the pipeline-related files. 
 [CML](https://cml.dev/) is used in this workflow to provision a cloud-based GPU 
 machine as well as report model performance results in Pull Requests.
+
+## Model Deployment
+
+Check out the [GitHub Workflow](https://github.com/iterative/example-get-started-experiments/blob/main/.github/workflows/deploy-model.yml)
+that uses the [Iterative Studio Model Registry](https://dvc.org/doc/studio/user-guide/model-registry/what-is-a-model-registry).
+to deploy the model to [AWS Sagemaker](https://aws.amazon.com/es/sagemaker/) whenever a new [version is registered](https://dvc.org/doc/studio/user-guide/model-registry/register-version).
 
 ## Project structure
 

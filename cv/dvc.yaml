@@ -20,6 +20,7 @@ stages:
     - train
     outs:
     - models/model.pkl
+    - models/model.pth
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -29,9 +30,10 @@ stages:
     params:
     - base
     - evaluate
-artifacts:
-  cv:
-    path: model
-    type: model
-    labels:
-    - cv
+  sagemaker:
+    cmd: cp models/model.pth sagemaker/code/model.pth && cd sagemaker && tar -cpzf
+      model.tar.gz code/ && cd .. && mv sagemaker/model.tar.gz .  && rm sagemaker/code/model.pth
+    deps:
+    - models/model.pth
+    outs:
+    - model.tar.gz
