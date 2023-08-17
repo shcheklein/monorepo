@@ -8,10 +8,12 @@
       },
       "ghcr.io/iterative/features/nvtop:1": {}
     },
-    "extensions": [
-      "Iterative.dvc",
-      "ms-python.python",
-      "redhat.vscode-yaml"
-    ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "Iterative.vscode-dvc-pack"
+        ]
+      }
+    },
     "postCreateCommand": "pip install --user -r requirements.txt"
 }
